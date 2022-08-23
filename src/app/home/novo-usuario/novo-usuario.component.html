@@ -15,6 +15,9 @@
     </div>
     <div class="form-group">
         <input type="text" class="form-control" formControlName="userName" placeholder="Usuário">
+        <app-mensagem  *ngIf="novoUsuarioForm.get('userName')?.errors?.minusculo &&
+        novoUsuarioForm.get('userName')?.touched"
+        mensagem="Usuário deve ser em letra minúscula"></app-mensagem>
     </div>
     <div class="form-group">
         <input type="password" class="form-control" formControlName="password" placeholder="Senha">
